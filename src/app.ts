@@ -8,11 +8,23 @@ const totalPayment = document.querySelector('#totalPayment') as HTMLSpanElement;
 const tipButtons = document.querySelectorAll('#tipButtons button');
 
 export function runApp() {
-    billInput.addEventListener('keyup', calculateTip);
+    billInput.addEventListener('keyup', handleUpdate);
 
     tipButtons.forEach(function (tipButton: HTMLButtonElement) {
         tipButton.addEventListener('click', handleButtonClick);
     });
+}
+
+function handleUpdate() {
+    const bill = parseFloat(billInput.value);
+
+    if (bill >= 0) {
+        billInput.classList.remove('is-invalid');
+        calculateTip();
+    } else {
+        billInput.classList.add('is-invalid');
+        clearResults();
+    }
 }
 
 function handleButtonClick() {
@@ -41,9 +53,13 @@ function calculateTip() {
         tipAmount.innerText = `$${tipDollarAmount.toFixed(2)}`;
         totalPayment.innerText = `$${result.toFixed(2)}`;
     } else {
-        billAmount.innerText = '';
-        tipPercentage.innerText = '';
-        tipAmount.innerText = '';
-        totalPayment.innerText = '';
+        clearResults();
     }
+}
+
+function clearResults() {
+    billAmount.innerText = '';
+    tipPercentage.innerText = '';
+    tipAmount.innerText = '';
+    totalPayment.innerText = '';
 }
