@@ -4,15 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Front End Web 100</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
 </head>
 
 <body>
     <header>
-        <h1>Front End Web 100 Starter</h1>
-        <h2>Progressive ITU</h2>
+        <h1>Tip Calculator</h1>
     </header>
+
+    <body>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </div>
+            <input type="number"
+                   class="form-control"
+                   placeholder="Bill Amount"
+                   aria-label="Bill Amount"
+                   aria-describedby="billInput"
+                   id="billInput">
+        </div>
+
+        <div class="btn-group mr-2"
+             role="group"
+             aria-label="Tip percentage"
+             id="tipButtons">
+            <button type="button"
+                    class="btn btn-secondary"
+                    data-tip-percentage="10">10%</button>
+            <button type="button"
+                    class="btn btn-secondary"
+                    data-tip-percentage="15">15%</button>
+            <button type="button"
+                    class="btn btn-secondary"
+                    data-tip-percentage="20">20%</button>
+        </div>
+
+        <div>You are tipping <span id="tipPercentageMessage">0</span>%</div>
+
+        <ul class="list-group"
+            id="results">
+            <li class="list-group-item">Bill Amount: <span id="billAmount"></span></li>
+            <li class="list-group-item">Tip Percentage: <span id="tipPercentage"></span></li>
+            <li class="list-group-item">Amount of tip: <span id="tipAmount"></span></li>
+            <li class="list-group-item">Total to be Paid: <span id="totalPayment"></span></li>
+        </ul>
+    </body>
     <main>
-        
+
     </main>
 </body>
 
