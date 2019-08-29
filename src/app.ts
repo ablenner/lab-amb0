@@ -1,4 +1,4 @@
-
+/* Angular 100 lab for Adam Blenner */
 const billInput = document.querySelector('#billInput') as HTMLInputElement;
 const billAmount = document.querySelector('#billAmount') as HTMLSpanElement;
 const tipPercentage = document.querySelector('#tipPercentage') as HTMLSpanElement;

@@ -1,4 +1,8 @@
-# Front-End Web 100 Starter Project
+# Adam Blenner - Angular 100 Lab
+
+.
+.
+.
 
 This is a project created for the Front-End Web 100 Class.
 
